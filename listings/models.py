@@ -3,6 +3,8 @@ from datetime import datetime
 from realtors.models import Realtor
 # Create your models here.
 
+#this defines our database
+
 class Listing(models.Model):
     realtor = models.ForeignKey(Realtor, on_delete=models.DO_NOTHING)
     title = models.CharField(max_length=200)
