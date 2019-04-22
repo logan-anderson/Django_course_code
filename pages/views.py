@@ -3,6 +3,7 @@ from django.http import HttpResponse
 
 from listings.models import Listing
 from realtors.models import Realtor
+from listings.choices import price_choices, bedroom_choices, state_choices
 # Create your views here.
 
 def index(request):
@@ -10,6 +11,9 @@ def index(request):
 
     context = {
         'listings': listings,
+        'state_choices': state_choices,
+        'bedroom_choices': bedroom_choices,
+        'price_choices': price_choices,
     }
     return render(request, 'pages/index.html', context)
 
